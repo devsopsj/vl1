@@ -1,0 +1,237 @@
+.input, .button {
+  transition: all 150ms ease;
+    text-decoration: none;
+}
+
+.button:focus {
+  text-decoration: underline;
+  border: solid 1px grey;
+    text-decoration: none;
+}
+.logo{
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png');
+  background-repeat:no-repeat;
+  background-size: 50px 50px;
+  background-position:left;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration:none; 
+}
+
+.card {
+  max-width: 26rem;
+  margin: 0 auto;
+}
+.card .title {
+  margin-bottom: 1.25rem;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.checkbox-text {
+  margin-left: .5rem;
+}
+
+[type=checkbox]:focus + .checkbox-text {
+  text-decoration: underline;
+}
+
+.notification.is-danger {
+  background: crimson;
+  margin-bottom: 1.5rem;
+}
+
+.msg-loading {
+  color: royalblue;
+}
+
+.msg-success {
+  color: forestgreen;
+  display: inline-block;
+  vertical-align: middle;
+}
+.msg-success:before {
+  content: '\2714';
+  font-size: 2em;
+  margin-right: .25rem;
+  margin-top: -.25rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.1s ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------------------- */
+.Modal-rootOverlay {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  cursor: pointer;
+  background: rgba(68,68,68,0.7);
+  overflow: hidden;
+  overflow-y: overlay;
+}
+.Modal-Card {
+  cursor: auto;
+  background: #fff;
+}
+.Modal-Card .title {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  padding: 0.75rem 1.5rem;
+}
+.Modal-Card .body {
+  background: #f1f1f1;
+  padding: 1rem 1.5rem;
+}
+.Modal-Card .body p {
+  margin-bottom: 0;
+}
+.Modal-Card .actions {
+  text-align: right;
+  padding: 0.75rem 1.5rem 1.2rem;
+}
+.Modal-Card.XL {
+  max-width: 1080px;
+  margin: auto;
+}
+.Modal-Card.SM {
+  max-width: 460px;
+}
+.Modal-Card.toCenter {
+  margin: auto;
+}
+.Y_center {
+  margin: 10% auto auto;
+  border-radius: 0.2em;
+  width: 90%;
+  max-width: 780px;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  opacity: 0;
+  -webkit-animation: Y_center 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: Y_center 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.lModal,
+.rModal {
+  padding: 1em;
+  max-width: 400px;
+  align-self: start;
+  min-height: 100%;
+  -webkit-animation: translateX 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: translateX 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.rModal {
+  margin-left: auto;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.lModal {
+  margin-right: auto;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+@-webkit-keyframes Y_center {
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes Y_center {
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes translateX {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes translateX {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/* ----------------------------------------------------------------------------------- */
+.button--social-login {
+  margin-bottom: 12px;
+  margin-right: 12px;
+  color: white;
+  height: 50px;
+  line-height: 46px;
+  position: relative;
+  text-align: left;
+}
+.button--social-login .icon {
+  margin-right: 12px;
+  font-size: 24px;
+  line-height: 24px;
+  width: 42px;
+  height: 24px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+}
+.button--social-login .icon:before {
+  display: inline-block;
+  width: 40px;
+}
+.button--social-login .icon:after {
+  content: "";
+}
+
+.button--facebook {
+  background-color: #4b70ab;
+  border: 1px solid #3b5988;
+}
+.button--facebook:hover {
+  background-color: #436499;
+}
+
+.button--linkedin {
+  background-color: #0087be;
+  border: 1px solid #00638b;
+}
+.button--linkedin:hover {
+  background-color: #0075a5;
+}
+.button--twitter {
+  background-color: #3B94D9;
+  border: 1px solid #257abc;
+}
+.button--twitter:hover {
+  background-color: #2988d2;
+}
+.button--googleplus {
+  background-color: #DD4B39;
+  border: 1px solid #c23321;
+}
+.button--googleplus:hover {
+  background-color: #d73925;
+}

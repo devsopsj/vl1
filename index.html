@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css'>
+<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="css/style.css">
+<style type="text/css"> 
+a:link 
+{ 
+text-decoration:none; 
+} 
+</style>
+</head>
+<body>
+  <section class="section">
+  <div class="container">
+    <article class="card">
+      <div class="card-content">
+        <center><h1 class="title">Intranet UPC</h1>
+
+<div id="app">
+<button @click="showModal_4 = true" class="button logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONECTA CON TU CUENTA UPC</button>
+  <my-modal :show.sync="showModal_4" mod="SM toCenter" >
+    <p>
+<a class="button button--social-login button--facebook" href="#"><i class="icon fa fa-facebook"></i><br>
+<a class="button button--social-login button--linkedin" href="#"><i class="icon fa fa-linkedin"></i><br>
+<a class="button button--social-login button--twitter" href="#"><i class="icon fa fa-twitter"></i><br>
+<a class="button button--social-login button--googleplus" href="#"><i class="icon fa fa-google-plus"></i></a>
+
+    </p>
+  </my-modal>
+</div>
+        </center><br>
+        <form id="login-form" @submit.prevent="submitLogin">
+          <div 
+            v-if="hasErrors"
+            id="login-errors" 
+            role="alert" 
+            aria-live="assertive"
+          >
+            <div class="notification is-danger">
+              Parece que el correo electrónico y la contraseña ingresados ​​no coinciden con nuestros registros. Inténtalo de nuevo!
+            </div>
+          </div>
+          <div class="field">
+            <label for="email" class="label">Email:</label>
+            <input 
+              type="email" 
+              class="input" 
+              :class="{ 'is-danger': hasErrors }" 
+              :disabled="isLoading"
+              id="email" 
+              aria-describedby="login-errors"
+              v-model="fields.email"
+              required
+            >
+          </div>
+          <div class="field">
+            <div class="label space-between">
+              <label for="password" id="password-label">Contraseña:</label>
+            </div>
+            <input 
+              :type="passwordIsText ? 'text' : 'password'" 
+              class="input" 
+              :class="{ 'is-danger': hasErrors }" 
+              :disabled="isLoading"
+              id="password"
+              aria-describedby="login-errors"
+              v-model="fields.password"
+              required
+            >
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <input 
+                  type="checkbox" 
+                  :disabled="isLoading"
+                  v-model="fields.remember"
+                >
+                <span class="checkbox-text">Recordar!</span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control space-between">
+              <div 
+                id="feedback"
+                role="status"
+                aria-live="polite"
+              >
+                <span class="msg-loading" v-if="isLoading">Cargando...</span>
+                <span class="msg-success" v-if="isSuccess">Inicio de sesión correcto!</span>
+              </div>
+              <button 
+                type="submit"
+                class="button is-medium is-link" 
+                :disabled="isLoading || isSuccess"
+                aria-describedby="feedback"
+              >Ingresar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </article>
+  </div>
+</section>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js'></script>
+
+<script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
